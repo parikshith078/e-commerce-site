@@ -1,4 +1,8 @@
+import { useGlobalContext } from "../lib/GlobalContext";
+
 function HeroSection() {
+  const tell = useGlobalContext();
+  console.log(tell);
   return (
     <div className="hero min-h-[60vh] bg-base-200">
       <div className="hero-content flex-col lg:flex-row-reverse">

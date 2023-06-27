@@ -1,6 +1,8 @@
 // import bookImage from "../assets/book.webp";
+import { useGlobalContext } from "../lib/GlobalContext";
 
-const ProductCard = ({ data }) => {
+const ProductCard = ({ data, id }) => {
+  const { addToCart } = useGlobalContext();
   return (
     <div className="card card-compact w-96 bg-base-100 shadow-xl">
       <figure className="p-4">
@@ -13,7 +15,12 @@ const ProductCard = ({ data }) => {
           {data.description}
         </p>
         <div className="card-actions justify-end mt-2">
-          <button className="btn btn-primary">Add to cart</button>
+          <button
+            onClick={() => addToCart(data, id)}
+            className="btn btn-primary"
+          >
+            Add to cart
+          </button>
         </div>
       </div>
     </div>

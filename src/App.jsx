@@ -4,6 +4,7 @@ import ProductCard from "./components/ProductCard";
 import { Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 import { useGlobalContext } from "./lib/GlobalContext";
+import CartPage from "./components/CartPage";
 
 function App() {
   const { data, setData } = useGlobalContext();
@@ -27,7 +28,7 @@ function App() {
       <Toaster />
       <Routes>
         <Route path="/" element={<Home data={data} />} />
-        <Route path="/cart" element={<h1>Cart</h1>} />
+        <Route path="/cart" element={<CartPage />} />
       </Routes>
     </>
   );

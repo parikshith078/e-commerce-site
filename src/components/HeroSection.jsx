@@ -8,10 +8,11 @@ function HeroSection() {
           className="max-w-sm rounded-lg shadow-2xl"
         />
         <div>
-          <h1 className="text-5xl font-bold">Bookshelf</h1>
+          <h1 className="text-5xl font-bold">SaleSparks</h1>
           <p className="py-6">
-            Shop the Best Selection of Books Online: From New Releases to Rare
-            Finds, We Have It All
+            SaleSparks - Your go-to destination for trendy fashion, elegant
+            jewelry, and cutting-edge electronics. Shop with ease and confidence
+            on our secure platform with fast shipping and easy returns.
           </p>
           <button className="btn btn-primary">Get Started</button>
         </div>

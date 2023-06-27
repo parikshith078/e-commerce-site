@@ -1,22 +1,6 @@
 // import bookImage from "../assets/book.webp";
 
 const ProductCard = ({ data }) => {
-  const getPriceInRupees = (price) => {
-    const rupees = (parseFloat(price) * 74.5) / 2;
-    return roundPrice(rupees.toFixed(0));
-  };
-  function roundPrice(price) {
-    // Round the price to the nearest multiple of 1000
-    const roundedPrice = Math.floor(price / 1000) * 1000;
-
-    // Subtract 1 from the rounded price if it is greater than or equal to 1000
-    if (roundedPrice >= 1000) {
-      return (roundedPrice - 1).toString();
-    } else {
-      // If the rounded price is less than 1000, return the string "999"
-      return "999";
-    }
-  }
   return (
     <div className="card card-compact w-96 bg-base-100 shadow-xl">
       <figure className="p-4">
@@ -37,3 +21,21 @@ const ProductCard = ({ data }) => {
 };
 
 export default ProductCard;
+
+export const getPriceInRupees = (price) => {
+  const rupees = (parseFloat(price) * 74.5) / 2;
+  return roundPrice(rupees.toFixed(0));
+};
+
+function roundPrice(price) {
+  // Round the price to the nearest multiple of 1000
+  const roundedPrice = Math.floor(price / 1000) * 1000;
+
+  // Subtract 1 from the rounded price if it is greater than or equal to 1000
+  if (roundedPrice >= 1000) {
+    return (roundedPrice - 1).toString();
+  } else {
+    // If the rounded price is less than 1000, return the string "999"
+    return "999";
+  }
+}

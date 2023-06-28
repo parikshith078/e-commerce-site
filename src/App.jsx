@@ -42,7 +42,13 @@ const Home = ({ data }) => {
       <HeroSection />
       <div className="grid grid-cols-1 md:grid-cols-2 place-items-center lg:grid-cols-3 gap-4 items-center">
         {data.length != 0 &&
-          data.map((item, id) => <ProductCard data={item} key={id} id={id} />)}
+          data.map((item, id) => (
+            <>
+              <button onClick={() => window[`my_modal_${id}`].showModal()}>
+                <ProductCard data={item} key={id} showDetails={false} />
+              </button>
+            </>
+          ))}
       </div>
     </>
   );

@@ -23,6 +23,12 @@ const GlobalContextProvider = ({ children }) => {
     setCart(newCart);
   };
 
+  const checkout = () => {
+    setCart([]);
+    localStorage.setItem("cart", JSON.stringify([]));
+    toast.success("Thank You for shopping with us.");
+  };
+
   const decrementCartItem = (id) => {
     const newCart = cart
       .map((item) => {
@@ -44,7 +50,9 @@ const GlobalContextProvider = ({ children }) => {
 
   const addToCart = (item, id) => {
     if (cart.some((cartItem) => cartItem.id === id)) {
-      toast.error("Item already in cart");
+      console.log(id);
+      console.table(item);
+      toast("Item already in cart");
       return;
     }
     localStorage.setItem(
@@ -63,6 +71,7 @@ const GlobalContextProvider = ({ children }) => {
     addToCart,
     incrementCartItem,
     decrementCartItem,
+    checkout,
   };
   return (
     <GlobalContext.Provider value={values}>{children}</GlobalContext.Provider>
